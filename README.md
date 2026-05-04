@@ -1,29 +1,37 @@
 # AWS VPC Infrastructure Project
 
 ## 🚀 Overview
-This project demonstrates the design and deployment of a secure AWS VPC with public and private subnets, EC2 instances, and load balancing.
+This project demonstrates the design and deployment of a secure and scalable AWS cloud infrastructure using a multi-tier VPC architecture.
 
 ## 🧱 Architecture
-- VPC (10.0.0.0/16)
-- Public & Private Subnets
-- Internet Gateway
-- NAT Gateway
-- EC2 Instances
+- Custom VPC (10.0.0.0/16)
+- Public and Private Subnets across multiple AZs
+- Internet Gateway for public access
+- NAT Gateway for private subnet internet access
+- EC2 instances (private)
+- Bastion host (public)
 - Application Load Balancer
 
+## 📊 Architecture Diagram
+![Architecture](architecture.png)
+
 ## ⚙️ Technologies Used
-- AWS EC2
 - AWS VPC
+- AWS EC2
 - AWS IAM
-- AWS ALB
-
-## 📸 Screenshots
-(Add screenshots here)
-
-## 📊 Diagram
-(Add architecture diagram here)
+- AWS Application Load Balancer
 
 ## 🔐 Key Features
-- Secure network isolation
-- High availability setup
-- Load-balanced application layer
+- Secure network isolation (private subnets)
+- Controlled access via bastion host
+- High availability using multiple AZs
+- Load balancing for traffic distribution
+
+## 📸 Screenshots
+(Add your screenshots here)
+
+## 🧠 What I Learned
+- Designing secure AWS network architectures
+- Implementing routing and NAT strategies
+- Managing cloud infrastructure components
+
