@@ -13,7 +13,7 @@ This project demonstrates the design and deployment of a secure and scalable AWS
 - Application Load Balancer
 
 ## 📊 Architecture Diagram
-Included
+
 <img width="848" height="342" alt="architecture drawio" src="https://github.com/user-attachments/assets/80a602c5-bb66-42dd-9efc-d4ab386ca289" />
 
 
@@ -30,7 +30,8 @@ Included
 - Load balancing for traffic distribution
 
 ## 📸 Screenshots
-(Add your screenshots here)
+<img width="1920" height="1080" alt="Screenshot 2026-05-03 223931" src="https://github.com/user-attachments/assets/ce612777-022b-4bd2-8089-d08a099ad2fd" />
+
 
 ## 🧠 What I Learned
 - Designing secure AWS network architectures
