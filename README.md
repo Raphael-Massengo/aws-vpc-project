@@ -13,7 +13,9 @@ This project demonstrates the design and deployment of a secure and scalable AWS
 - Application Load Balancer
 
 ## 📊 Architecture Diagram
-![Architecture](architecture.png)
+Included
+<img width="848" height="342" alt="architecture drawio" src="https://github.com/user-attachments/assets/80a602c5-bb66-42dd-9efc-d4ab386ca289" />
+
 
 ## ⚙️ Technologies Used
 - AWS VPC
