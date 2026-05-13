@@ -1,33 +1,90 @@
-# AWS VPC Infrastructure Project
+# AWS VPC infrastructure project with public/private subnets, EC2, NAT Gateway, and Application Load Balancer
 
 ## 🚀 Overview
 This project demonstrates the design and deployment of a secure and scalable AWS cloud infrastructure using a multi-tier VPC architecture.
 
+The environment was built to simulate a real-world production setup with secure networking practices, private infrastructure, controlled administrative access, and high availability.
+
+The project combines AWS cloud engineering concepts with networking principles from CCNA, including routing, subnetting, traffic control, and secure access management.
+
 ## 🧱 Architecture
-- Custom VPC (10.0.0.0/16)
-- Public and Private Subnets across multiple AZs
-- Internet Gateway for public access
-- NAT Gateway for private subnet internet access
-- EC2 instances (private)
-- Bastion host (public)
-- Application Load Balancer
+- The infrastructure includes:
+- Custom AWS VPC (`10.0.0.0/16`)
+- Public and Private Subnets across multiple Availability Zones
+- Internet Gateway (IGW)
+- NAT Gateway
+- Bastion Host
+- EC2 Instances in private subnets
+- Application Load Balancer (ALB)
+- Route Tables and Security Groups
 
 ## 📊 Architecture Diagram
 
 <img width="848" height="342" alt="architecture drawio" src="https://github.com/user-attachments/assets/80a602c5-bb66-42dd-9efc-d4ab386ca289" />
 
+# ⚙️ AWS Services Used
 
-## ⚙️ Technologies Used
-- AWS VPC
-- AWS EC2
-- AWS IAM
-- AWS Application Load Balancer
+| Service | Purpose |
+|---|---|
+| VPC | Isolated cloud network |
+| EC2 | Virtual servers |
+| Internet Gateway | Public internet access |
+| NAT Gateway | Outbound internet for private instances |
+| Application Load Balancer | Traffic distribution |
+| IAM | Secure access management |
+| Security Groups | Firewall and traffic filtering |
 
-## 🔐 Key Features
-- Secure network isolation (private subnets)
-- Controlled access via bastion host
-- High availability using multiple AZs
-- Load balancing for traffic distribution
+# 🔐 Security Design
+
+Several security best practices were implemented:
+
+- EC2 application servers were deployed inside private subnets
+- Private instances do not have public IP addresses
+- SSH access is restricted through a Bastion Host
+- Security Groups were configured using least privilege principles
+- Public traffic is routed only through the Load Balancer
+
+# 🌐 Network Design
+
+## Public Subnets
+Used for:
+- Bastion Host
+- Load Balancer
+- NAT Gateway
+
+## Private Subnets
+Used for:
+- Internal EC2 application servers
+  
+This design improves security by isolating backend infrastructure from direct internet exposure.
+
+# ⚡ High Availability
+To improve availability and fault tolerance:
+- Multiple Availability Zones were used
+- Public and private subnets were distributed across AZs
+- Application Load Balancer distributes traffic between EC2 instances
+  
+# 🛠️ Deployment Steps
+## 1. Created Custom VPC
+- CIDR block: `10.0.0.0/16`
+## 2. Configured Subnets
+- Public Subnet 1 → `10.0.1.0/24`
+- Public Subnet 2 → `10.0.2.0/24`
+- Private Subnet 1 → `10.0.3.0/24`
+- Private Subnet 2 → `10.0.4.0/24`
+
+## 3. Configured Internet Gateway
+Attached IGW to enable public internet access.
+
+## 4. Created NAT Gateway
+Allowed private instances outbound internet access without exposing them publicly.
+
+## 5. Launched EC2 Instances
+- Bastion Host in public subnet
+- Application EC2 instances in private subnets
+  
+## 6. Configured Application Load Balancer
+Distributed incoming traffic across EC2 targets.
 
 ## 📸 Screenshots
 <img width="1920" height="1080" alt="Screenshot 2026-05-03 222516" src="https://github.com/user-attachments/assets/f0a1da47-0aaa-4c72-9280-ba34b723914e" />
@@ -49,9 +106,27 @@ This project demonstrates the design and deployment of a secure and scalable AWS
 <img width="1920" height="1080" alt="Screenshot 2026-05-03 223849" src="https://github.com/user-attachments/assets/55ea1520-e732-44e6-8771-d3ca1a0cfc94" />
 <img width="1920" height="1080" alt="Screenshot 2026-05-03 223931" src="https://github.com/user-attachments/assets/ce612777-022b-4bd2-8089-d08a099ad2fd" />
 
+# 🧠 Key Learning Outcomes
+Through this project, I gained practical experience with:
+- AWS VPC architecture design
+- Public vs Private subnet implementation
+- Route table configuration
+- NAT Gateway functionality
+- Load balancing concepts
+- Secure cloud networking
+- Infrastructure troubleshooting
+  
+# 🚧 Future Improvements
+Planned enhancements:
+- Infrastructure as Code using Terraform
+- Monitoring with CloudWatch
+- Auto Scaling Group integration
+- CI/CD deployment pipeline
+- HTTPS configuration using ACM
 
-## 🧠 What I Learned
-- Designing secure AWS network architectures
-- Implementing routing and NAT strategies
-- Managing cloud infrastructure components
+# 👨‍💻 Author
+Raphael Massengo
+- CCNA Certified
+- AWS Cloud Engineering Enthusiast
+- Master’s Student in Data Analytics
 
